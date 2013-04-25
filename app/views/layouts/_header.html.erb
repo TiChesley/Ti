@@ -12,7 +12,7 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">Ti Chesley</a>
+      <%=link_to "Ti Chesley", root_path, class: "brand" %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
@@ -22,12 +22,16 @@
         <!-- .nav, .navbar-search, .navbar-form, etc -->
          </ul>
          <ul class="nav pull-right">
-	      	<li><%= link_to "Log In", root_path %></li>
-			<li><%= link_to "Sign Up", about_path %></li>
+         	<% if user_signed_in? %>
+         		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+         		<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+         	<% else %>
+		      	<li><%= link_to "Log In", new_user_session_path %></li>
+				<li><%= link_to "Sign Up", new_user_registration_path %></li>
+			<% end %>
         <!-- .nav, .navbar-search, .navbar-form, etc -->
          </ul>
       </div>
- 
     </div>
   </div>
 </div>
