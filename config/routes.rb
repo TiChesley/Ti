@@ -4,7 +4,7 @@ Ti::Application.routes.draw do
 
   devise_for :user
 
-root :to => 'pages#home'
+root :to => 'pins#index'
 get 'about' => 'pages#about'
 
 

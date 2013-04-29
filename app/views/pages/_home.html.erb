@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+<div class="hero-unit">
+Hi! I'm an entrepreneur and environmentalist, and I live in the West Village of New York City. I have a strong background in climate change and ESG. I know that businesses can change the world for the better while increasing their bottom line.</div>
+<% else %>
+<div class="hero-unit">
+Hi! I'm an entrepreneur and environmentalist, and I live in the West Village of New York City.
+
+<p> <%= link_to 'Sign up for more information',  new_user_registration_path , class: "btn btn-large btn-info" %> </p>
+
+</div>
+<% end %>
