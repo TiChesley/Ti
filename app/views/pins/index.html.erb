@@ -1,7 +1,13 @@
-<%= render 'pages/home' %>
+        <tbody>
+            <div id="pins">
+            <%= render @pins %>
+            </div>
+        </tbody>
+    </table>
 
-<div id="pins">
-  <%= render @pins %>
-</div>
+    <br />
 
-<%= will_paginate @pins %>
+    <%= link_to 'New Pin', new_pin_path %>
+
+
+  

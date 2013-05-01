@@ -1,11 +1,15 @@
 Ti::Application.routes.draw do
-  resources :pins
+get "users/show"
 
+resources :pins
 
-  devise_for :user
+devise_for :users
+match 'users/:id' => 'users#show', as: :user
+
+get 'about' => 'pages#about'
 
 root :to => 'pins#index'
-get 'about' => 'pages#about'
+
 
 
   # The priority is based upon order of creation:
